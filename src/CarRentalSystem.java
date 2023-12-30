@@ -63,7 +63,7 @@ public class CarRentalSystem {
     }
 
     public void updateCustomer(String custerId, Customer customer) {
-        if (!customers.containsKey(custerId)) {
+        if (customers.containsKey(custerId)) {
             customers.put(custerId, customer);
             System.out.println("Customer with curtomerID : " + custerId + " Updated");
         } else {
@@ -72,7 +72,7 @@ public class CarRentalSystem {
     }
 
     public void deleteCustomer(String custerId) {
-        if (!customers.containsKey(custerId)) {
+        if (customers.containsKey(custerId)) {
             customers.remove(custerId);
             System.out.println("Customer with curtomerID : " + custerId + " Removed");
         } else {
@@ -125,7 +125,7 @@ public class CarRentalSystem {
     public void viewReanalHistoryByCustomer(String customerId) {
 
         if (customers.containsKey(customerId)) {
-            System.out.println("King");
+            // System.out.println("King");
             customers.get(customerId).displayRentalHistory();
         }
         System.out.println();
